@@ -1,0 +1,24 @@
+.container {
+	border: 1px solid salmon;
+	width: 60%;
+	height: 80%;
+}
+
+.toggle {
+	border: 1px solid springgreen;
+	background-color: teal;
+	color: white;
+	font-size: larger;
+	width: 10rem;
+	height: 3rem;
+}
+
+.toggle:hover {
+	cursor: pointer;
+}
+
+.user {
+	margin: 1rem;
+	padding: 1rem;
+	border: 1px solid teal;
+}

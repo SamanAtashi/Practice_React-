@@ -1,5 +1,13 @@
+import React from 'react';
+import Person from './Person/Person';
 import './App.css';
 
-const App = () => <h1>hello</h1>;
+const App = () => {
+	return (
+		<div className="container">
+			<Person />
+		</div>
+	);
+};
 
 export default App;
