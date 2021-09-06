@@ -20,6 +20,16 @@ const Person = () => {
 		}
 	};
 
+	const nameHandler = (id, e) => {
+		let arr = [...persons]
+		arr.forEach(person => {
+		    if(person.id===id){
+		        person.name=e.target.value;
+		    }
+		});
+		personsHandler(arr);
+	};
+
 	return (
 		<>
 			<h1>
@@ -28,7 +38,7 @@ const Person = () => {
 			<p>This is really working!!!</p>
 			<User
 				persons={persons}
-				personsHandler={personsHandler}
+				nameHandler={nameHandler}
 				toggleHandler={toggleHandler}
 			/>
 		</>
