@@ -1,4 +1,5 @@
 import React from 'react';
+import classes from './user.css';
 
 const User = ({ persons, nameHandler, toggleHandler }) => {
 	return (
@@ -8,7 +9,10 @@ const User = ({ persons, nameHandler, toggleHandler }) => {
 			</button>
 			{persons.map((person) => {
 				return (
-					<div key={person.id} className="eachPerson">
+					<div
+						key={person.id}
+						className={classes.eachPerson}
+					>
 						<p>{`I'm "${person.name}" and I am ${person.age} years old!`}</p>
 						<input
 							value={person.name}
