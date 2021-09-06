@@ -1,48 +1,20 @@
-import React, { useState } from 'react';
-import User from './User';
+import React from 'react';
 
-const Person = () => {
-	const [persons, personsHandler] = useState([
-		{ id: 1, name: 'Sam', age: 29 },
-		{ id: 2, name: 'Max', age: 25 },
-		{ id: 3, name: 'Liam', age: 12 },
-	]);
+import classes from './Person.css';
 
-	const toggleHandler = () => {
-		if (persons.length > 0) {
-			personsHandler([]);
-		} else {
-			personsHandler([
-				{ id: 1, name: 'Sam', age: 29 },
-				{ id: 2, name: 'Max', age: 25 },
-				{ id: 3, name: 'Liam', age: 12 },
-			]);
-		}
-	};
+const person = ( props ) => {
+    const rnd = Math.random();
 
-	const nameHandler = (id, e) => {
-		let arr = [...persons]
-		arr.forEach(person => {
-		    if(person.id===id){
-		        person.name=e.target.value;
-		    }
-		});
-		personsHandler(arr);
-	};
-
-	return (
-		<>
-			<h1>
-				This is <i>Person Project</i>
-			</h1>
-			<p>This is really working!!!</p>
-			<User
-				persons={persons}
-				nameHandler={nameHandler}
-				toggleHandler={toggleHandler}
-			/>
-		</>
-	);
+    if ( rnd > 0.7 ) {
+        throw new Error( 'Something went wrong' );
+    }
+    return (
+        <div className={classes.Person}>
+            <p onClick={props.click}>I'm {props.name} and I am {props.age} years old!</p>
+            <p>{props.children}</p>
+            <input type="text" onChange={props.changed} value={props.name} />
+        </div>
+    )
 };
 
-export default Person;
+export default person;
