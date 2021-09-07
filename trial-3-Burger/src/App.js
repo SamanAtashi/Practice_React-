@@ -1,12 +1,13 @@
 import './App.css';
 
 import Layout from './Components/Layout/Layout';
+import BurgerBuilder from './Containers/BurgerBuilder/BurgerBuilder';
 
 function App() {
 	return (
 		<div>
 			<Layout>
-				<p>test</p>
+				<BurgerBuilder />
 			</Layout>
 		</div>
 	);
