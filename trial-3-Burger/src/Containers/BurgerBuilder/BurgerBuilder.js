@@ -5,10 +5,16 @@ import Aux from '../../hoc/aux';
 import Burger from '../../Components/Burger/Burger';
 
 class BurgerBuilder extends Component {
+	state = {
+		cheese: 2,
+		salad: 2,
+		meat: 2,
+	};
+
 	render() {
 		return (
 			<Aux>
-				<Burger />
+				<Burger ingredients={this.state} />
 				<div>Burger Controls</div>
 			</Aux>
 		);
