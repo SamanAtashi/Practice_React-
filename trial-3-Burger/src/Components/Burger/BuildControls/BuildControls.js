@@ -30,6 +30,12 @@ const BuildControls = (props) => {
 					/>
 				);
 			})}
+			<button
+				disabled={!props.purchaseable}
+				className={classes.OrderButton}
+			>
+				CHECK OUT
+			</button>
 		</div>
 	);
 };
