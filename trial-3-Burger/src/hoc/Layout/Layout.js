@@ -1,9 +1,9 @@
 import React from 'react';
 
-import Aux from '../../hoc/aux';
+import Aux from '../Aux/aux';
 
-import ToolBar from '../Navigation/ToolBar/ToolBar';
-import SideDrawer from '../Navigation/SideDrawer/SideDrawer';
+import ToolBar from '../../Components/Navigation/ToolBar/ToolBar';
+import SideDrawer from '../../Components/Navigation/SideDrawer/SideDrawer';
 
 import classes from './Layout.module.css';
 
