@@ -32,6 +32,7 @@ const BuildControls = (props) => {
 			})}
 			<button
 				disabled={!props.purchaseable}
+				onClick={props.purchasing}
 				className={classes.OrderButton}
 			>
 				CHECK OUT
