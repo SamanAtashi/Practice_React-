@@ -7,12 +7,27 @@ import SideDrawer from '../Navigation/SideDrawer/SideDrawer';
 
 import classes from './Layout.module.css';
 
-const Layout = (props) => (
-	<Aux>
-		<ToolBar />
-		<SideDrawer />
-		<main className={classes.Layout}>{props.children}</main>
-	</Aux>
-);
+class Layout extends React.Component {
+	state = { showSideDrawer: true };
+
+	SideDrawerCloseHandler = () => {
+		this.setState({ showSideDrawer: false });
+	};
+
+	render() {
+		return (
+			<Aux>
+				<ToolBar />
+				<SideDrawer
+					closed={this.SideDrawerCloseHandler}
+					open={this.state.showSideDrawer}
+				/>
+				<main className={classes.Layout}>
+					{this.props.children}
+				</main>
+			</Aux>
+		);
+	}
+}
 
 export default Layout;
