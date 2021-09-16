@@ -33,13 +33,14 @@ class Blog extends Component {
 
 	render() {
 		const posts = this.state.posts.map((post) => {
-			console.log(post);
 			return (
 				<Post
 					key={post.id}
 					title={post.title}
 					author={post.author}
-					clicked={this.postSelectedHandler}
+					clicked={() => {
+						this.postSelectedHandler(post.id);
+					}}
 				/>
 			);
 		});
