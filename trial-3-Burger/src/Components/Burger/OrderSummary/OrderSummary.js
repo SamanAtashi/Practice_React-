@@ -7,9 +7,9 @@ import Button from '../../UI/Button/Button';
 const OrderSummary = (props) => {
 	const ingredientsSummary = Object.keys(props.ingredients).map((igKey) => {
 		return (
-			<li>
-				<span>{igKey}</span>
+			<li key={igKey}>
 				{props.ingredients[igKey]}
+				<span> {igKey}</span>
 			</li>
 		);
 	});
