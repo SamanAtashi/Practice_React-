@@ -20,42 +20,86 @@ class Calculator extends Component {
 	};
 
 	clearHandler() {
-		console.log(this.state);
+		this.clearing();
+		this.setState({ result: 0 });
 	}
 
-	additionHandler() {
+	clearing = () => {
+		document.querySelectorAll('.input')[0].value = '';
+		document.querySelectorAll('.input')[1].value = '';
+	};
+
+	additionHandler = () => {
 		this.setState({
 			result:
 				Number(this.state.input_1) + Number(this.state.input_2),
 		});
-	}
+		this.clearing();
+	};
+	subtractHandler = () => {
+		this.setState({
+			result:
+				Number(this.state.input_1) - Number(this.state.input_2),
+		});
+
+		this.clearing();
+	};
+	multiplyHandler = () => {
+		this.setState({
+			result:
+				Number(this.state.input_1) * Number(this.state.input_2),
+		});
+
+		this.clearing();
+	};
+	divisionHandler = () => {
+		this.setState({
+			result:
+				Number(this.state.input_1) / Number(this.state.input_2),
+		});
+
+		this.clearing();
+	};
 
 	render() {
+		let {
+			clearHandler,
+			state,
+			input_1_Handler,
+			input_2_Handler,
+			additionHandler,
+			subtractHandler,
+			multiplyHandler,
+			divisionHandler,
+		} = this;
+
 		return (
 			<div>
-				<h1>{this.state.result}</h1>
+				<h1>{state.result}</h1>
 				<input
 					type="number"
+					className="input"
 					placeholder="Num 1"
-					onChange={(e) => this.input_1_Handler(e)}
+					onChange={(e) => input_1_Handler(e)}
 				/>
 				<input
 					type="number"
+					className="input"
 					placeholder="Num 2"
-					onChange={(e) => this.input_2_Handler(e)}
+					onChange={(e) => input_2_Handler(e)}
 				/>
-				<button onClick={this.clearHandler}>Clear</button>
+				<button onClick={clearHandler}>Clear</button>
 				<div>
-					<button onClick={() => this.additionHandler()}>
+					<button onClick={() => additionHandler()}>
 						+
 					</button>
-					<button onClick={() => this.subtractHandler()}>
+					<button onClick={() => subtractHandler()}>
 						-
 					</button>
-					<button onClick={() => this.multiplyHandler()}>
+					<button onClick={() => multiplyHandler()}>
 						*
 					</button>
-					<button onClick={() => this.divisionHandler()}>
+					<button onClick={() => divisionHandler()}>
 						/
 					</button>
 				</div>
