@@ -1,9 +1,12 @@
 import './App.css';
+import Widgets from './Components/Widgets';
 
-function App() {
-  return (
-   <h1>hello</h1>
-  );
-}
+const App = () => {
+	return (
+		<div className="main">
+			<Widgets />
+		</div>
+	);
+};
 
 export default App;
