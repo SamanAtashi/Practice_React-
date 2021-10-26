@@ -3,12 +3,12 @@ import React, { Component } from 'react';
 class MyDate extends Component {
 	constructor(props) {
 		super(props);
-		this.state = { date: new Date() };
+		this.state = { date: new Date(), time: new Date() };
 		this.clearing = 0;
 	}
 
 	tick = () => {
-		this.setState({ date: new Date() });
+		this.setState({ date: new Date(), time: new Date() });
 	};
 
 	componentDidMount() {
@@ -23,7 +23,12 @@ class MyDate extends Component {
 	}
 
 	render() {
-		return <div>{this.state.date.toString()}</div>;
+		return (
+			<div>
+				<span>{this.state.time.toTimeString()}</span>
+				<span>{this.state.date.toDateString()}</span>
+			</div>
+		);
 	}
 }
 
