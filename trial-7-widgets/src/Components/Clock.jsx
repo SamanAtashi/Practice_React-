@@ -27,11 +27,11 @@ class Clock extends Component {
 			<div>
 				<h2>Clock</h2>
 				<p>
-					<span>Time:</span>
+					<span className="p-6">Time:</span>
 					{this.state.time.toTimeString()}
 				</p>
 				<p>
-					<span>Date:</span>
+					<span className="p-6">Date:</span>
 					{this.state.date.toDateString()}
 				</p>
 			</div>
