@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class MyDate extends Component {
+class Clock extends Component {
 	constructor(props) {
 		super(props);
 		this.state = { date: new Date(), time: new Date() };
@@ -25,11 +25,18 @@ class MyDate extends Component {
 	render() {
 		return (
 			<div>
-				<span>{this.state.time.toTimeString()}</span>
-				<span>{this.state.date.toDateString()}</span>
+				<h2>Clock</h2>
+				<p>
+					<span>Time:</span>
+					{this.state.time.toTimeString()}
+				</p>
+				<p>
+					<span>Date:</span>
+					{this.state.date.toDateString()}
+				</p>
 			</div>
 		);
 	}
 }
 
-export default MyDate;
+export default Clock;

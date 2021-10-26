@@ -1,5 +1,5 @@
 import classes from './Widgets.module.css';
-import Clock from './Clock/Clock';
+import Clock from './Clock';
 const Widgets = () => {
 	return (
 		<div className={classes.container}>
