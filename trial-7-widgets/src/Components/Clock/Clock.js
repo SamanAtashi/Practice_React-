@@ -1,10 +1,11 @@
-import Date from "./Date"
+import MyDate from "./Date.jsx"
 import Time from "./Time"
 
 const Clock = () => {
     return (
         <div>
-            <Date />
+            <h1>Clock</h1>
+            <MyDate />
             <Time />
         </div>
     )
