@@ -24,14 +24,14 @@ class Clock extends Component {
 
 	render() {
 		return (
-			<div>
-				<h2>Clock</h2>
-				<p>
-					<span className="p-6">Time:</span>
+			<div className="border-2 text-white border-yellow-500 bg-yellow-600 p-5">
+				<h2 className="m-3 ml-0 font-bold text-3xl ">Clock</h2>
+				<p className="my-1">
+					<span className="mr-2">Time:</span>
 					{this.state.time.toTimeString()}
 				</p>
-				<p>
-					<span className="p-6">Date:</span>
+				<p className="my-1">
+					<span className="mr-2">Date:</span>
 					{this.state.date.toDateString()}
 				</p>
 			</div>
