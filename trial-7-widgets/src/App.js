@@ -1,9 +1,8 @@
-import './App.css';
 import Widgets from './Components/Widgets';
 
 const App = () => {
 	return (
-		<div className="main">
+		<div className="w-full h-full relative">
 			<Widgets />
 		</div>
 	);
